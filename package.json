@@ -1,10 +1,11 @@
 {
-  "name": "melvynx",
+  "name": "MyREADME",
   "version": "1.0.0",
-  "description": "I represent myself as a penguin 🐧 and I work at QoQa.ch as otter 🦦. Web, mobile backend, I try to touch everything. I prefer the web for now.",
+  "description": "Project README Generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Melvynx/Melvynx/issues"
+    "url": "https://github.com/estebanmathia/MyREADME/issues"
   },
-  "homepage": "https://github.com/Melvynx/Melvynx#readme",
+  "homepage": "https://github.com/estebanmathia/MyREADME#readme",
   "devDependencies": {
     "eslint": "^7.30.0"
   }

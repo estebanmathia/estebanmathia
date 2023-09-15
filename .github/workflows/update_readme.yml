@@ -1,11 +1,13 @@
-name: Update README all day at 04:04
+name: Update README all working days
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    # “At 13:37 on every day-of-week from Monday through Friday.”
-    - cron: '03 4 * * *'
+    - cron: '0 12 * * 1-5' # Tous les jours de la semaine (lundi à vendredi) à midi
+    - cron: '0 1 4 3 *'   # 4 mars à midi
+    - cron: '0 1 31 10 *' # 31 octobre à midi
+    - cron: '0 1 25 12 *' # 25 décembre à midi
 
 jobs:
   update-readme:
@@ -27,11 +29,11 @@ jobs:
       - name: commit changes
         uses: EndBug/add-and-commit@v4
         with:
-          author_name: Melvynx
-          author_email: melvynmal@gmail.com
+          author_name: estebanmathia
+          author_email: esteban.mathia@supinfo.com
           force: false
           signoff: false
-          message: ':memo: README.md updated by Gabot'
+          message: ':memo: README.md updated automaticaly'
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
