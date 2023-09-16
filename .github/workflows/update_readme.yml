@@ -31,6 +31,8 @@ jobs:
         with:
           author_name: estebanmathia
           author_email: esteban.mathia@supinfo.com
+          committer_name: estebanmathia
+          committer_email: esteban.mathia@supinfo.com
           force: false
           signoff: false
           message: ':memo: README.md updated automaticaly'
