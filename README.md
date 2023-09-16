@@ -79,10 +79,8 @@ I work with a wide range of technologies in my repositories, including but not l
 <div id="front-end-development"></div>
 
 - ### Front-End Development
-    - [![HTML][HTML-shield]](https://developer.mozilla.org/fr/docs/Web/HTML)
-    - [![CSS][CSS-shield]](https://developer.mozilla.org/fr/docs/Web/CSS)
-    - [![REACT][REACT-shield]](https://fr.legacy.reactjs.org/)
     - [![VUE][VUE-shield]](https://vuejs.org/)
+    - [![REACT][REACT-shield]](https://fr.legacy.reactjs.org/)
 
 <div id="back-end-development"></div>
 
@@ -134,9 +132,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Sep 15 2023
+Last update on Sat Sep 16 2023
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Code poet with a dash of caffeine. 📜☕
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
