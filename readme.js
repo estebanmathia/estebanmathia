@@ -79,10 +79,8 @@ I work with a wide range of technologies in my repositories, including but not l
 <div id="front-end-development"></div>
 
 - ### Front-End Development
-    - [![HTML][HTML-shield]](https://developer.mozilla.org/fr/docs/Web/HTML)
-    - [![CSS][CSS-shield]](https://developer.mozilla.org/fr/docs/Web/CSS)
-    - [![REACT][REACT-shield]](https://fr.legacy.reactjs.org/)
     - [![VUE][VUE-shield]](https://vuejs.org/)
+    - [![REACT][REACT-shield]](https://fr.legacy.reactjs.org/)
 
 <div id="back-end-development"></div>
 
