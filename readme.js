@@ -57,7 +57,7 @@ module.exports = `<div id="top"></div>
 
 ## Streak
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=estebanmathia&theme=gruvbox&hide_border=true" alt="Streak"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=estebanmathia&theme=gruvbox&hide_border=true" alt="Streak"  align="center"/>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
