@@ -30,10 +30,10 @@ module.exports = `<div id="top"></div>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#organizations">Organizations</a>
+      <a href="#streak">Streak</a>
     </li>
     <li>
-      <a href="#streak">Streak</a>
+      <a href="#organizations">Organizations</a>
     </li>
     <li>
       <a href="#open-source-contributions">Open Source Contributions</a>
