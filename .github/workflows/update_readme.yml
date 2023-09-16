@@ -26,16 +26,26 @@ jobs:
           node index.js > README.md
         env:
           CI: true
+      #- name: commit changes
+      #  uses: EndBug/add-and-commit@v4
+      #  with:
+      #    author_name: estebanmathia
+      #    author_email: esteban.mathia@supinfo.com
+      #    force: false
+      #    signoff: false
+      #    message: ':memo: README.md updated automaticaly'
+      #  env:
+      #    # This is necessary in order to push a commit to the repo
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Set up Git
+        run: |
+          git config user.name "estebanmathia"
+          git config user.email "esteban.mathia@supinfo.com"
       - name: commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: estebanmathia
-          author_email: esteban.mathia@supinfo.com
-          committer_name: estebanmathia
-          committer_email: esteban.mathia@supinfo.com
-          force: false
-          signoff: false
-          message: ':memo: README.md updated automaticaly'
+        run: |
+          git add .
+          git commit -m ":memo: README.md updated automatically"
+          git push origin HEAD
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
