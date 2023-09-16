@@ -33,6 +33,9 @@
       <a href="#organizations">Organizations</a>
     </li>
     <li>
+      <a href="#streak">Streak</a>
+    </li>
+    <li>
       <a href="#open-source-contributions">Open Source Contributions</a>
     </li>
     <li>
@@ -51,6 +54,12 @@
     <li><a href="#visitor-count">Visitor count</a></li>
   </ol>
 </details>
+
+## Streak
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=estebanmathia&theme=gruvbox&hide_border=true" alt="Streak"/>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Organizations
 Here are some of the organizations I'm proud to be a part of:
