@@ -30,10 +30,10 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#organizations">Organizations</a>
+      <a href="#streak">Streak</a>
     </li>
     <li>
-      <a href="#streak">Streak</a>
+      <a href="#organizations">Organizations</a>
     </li>
     <li>
       <a href="#open-source-contributions">Open Source Contributions</a>
@@ -141,9 +141,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Sat Sep 16 2023
+Last update on Mon Sep 18 2023
 
-Code poet with a dash of caffeine. 📜☕
+Turning caffeine into code since 2019. ☕💻
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
