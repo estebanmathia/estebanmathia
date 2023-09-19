@@ -24,7 +24,6 @@ module.exports = `<div id="top"></div>
 </div>
 
 
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
