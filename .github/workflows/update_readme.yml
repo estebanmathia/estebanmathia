@@ -40,6 +40,7 @@ jobs:
 
       - name: Append Changes to Change Log
         run: |
+          touch changes.txt
           cat changes.txt >> CHANGELOG.md  # Append changes to your CHANGELOG.md file
           rm changes.txt  # Remove temporary changes.txt file
         if: steps.file-changes.outputs.files
