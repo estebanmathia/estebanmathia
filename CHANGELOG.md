@@ -19,3 +19,13 @@ readme.js was changed
 .github/workflows/update_readme.yml was changed
 
 
+## 1.0.1
+### Files added: 0
+
+### Files changed: 3
+
+.github/workflows/update_readme.yml was changed
+
+readme.js was changed
+
+
