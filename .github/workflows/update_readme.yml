@@ -39,3 +39,14 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Notification on Discord
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          username: MyReadmeBot
+          color: '#FFFF00'
+          avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
+          description: New update du jour
+          details: ''
+          footer: New commit
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
