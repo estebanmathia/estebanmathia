@@ -36,8 +36,8 @@ jobs:
         id: file-changes
         uses: trilom/file-changes-action@v1.2.3
         with:
+          githubToken: ${{ secrets.GH_TOKEN }}
           fileOutput: changes.txt
-
       - name: Append Changes to Change Log
         run: |
           touch changes.txt

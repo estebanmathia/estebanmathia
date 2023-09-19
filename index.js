@@ -18,7 +18,8 @@ function generateNewREADME() {
   }
 
   const identifierToUpdate = {
-    //day_before_new_years: getDBNWSentence(),
+    // Add your own custom rows here
+    // Format: identifier: func
     today_date: getTodayDate(),
     signing: getSigning(),
     special_day: getSpecialDay(),
