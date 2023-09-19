@@ -23,7 +23,6 @@ module.exports = `<div id="top"></div>
   </p>
 </div>
 
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
