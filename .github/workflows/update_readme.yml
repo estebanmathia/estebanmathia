@@ -51,11 +51,13 @@ jobs:
           echo "" >> CHANGELOG.md
           for file in ${{ steps.changed-files.outputs.added_files }}; do 
             echo "$file was added" >> CHANGELOG.md
+            echo "" >> CHANGELOG.md
           done
           echo "### Files changed: ${{steps.changed-files.outputs.all_changed_and_modified_files_count}}" >> CHANGELOG.md
           echo "" >> CHANGELOG.md
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do 
             echo "$file was changed" >> CHANGELOG.md
+            echo "" >> CHANGELOG.md
           done
           echo "" >> CHANGELOG.md
       - name: commit changes
