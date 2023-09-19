@@ -32,13 +32,16 @@ jobs:
           node index.js > README.md
         env:
           CI: true
-      - name: Get Changes Since Last Commit
-        id: file-changes
-        uses: trilom/file-changes-action@v1.2.3
-      - name: Update CHANGELOG.md
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v39
+      - name: List all changed files
         run: |
-          cat $HOME/files.txt >> CHANGELOG.md
-        if: steps.file-changes.outputs.files != ''
+          cat "## ${{ steps.versionning.outputs.version }}" >> CHANGELOG.md
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do 
+            cat "$file was changed" >> CHANGELOG.md
+          done
+          cat "" >> CHANGELOG.md
       - name: commit changes
         uses: EndBug/add-and-commit@v4
         with:
