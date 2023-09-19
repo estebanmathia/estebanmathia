@@ -35,15 +35,10 @@ jobs:
       - name: Get Changes Since Last Commit
         id: file-changes
         uses: trilom/file-changes-action@v1.2.3
-        with:
-          githubToken: ${{ secrets.GH_TOKEN }}
-          fileOutput: changes.txt
-      - name: Append Changes to Change Log
+      - name: Update CHANGELOG.md
         run: |
-          touch changes.txt
-          cat changes.txt >> CHANGELOG.md  # Append changes to your CHANGELOG.md file
-          rm changes.txt  # Remove temporary changes.txt file
-        if: steps.file-changes.outputs.files
+          cat $HOME/files.txt >> CHANGELOG.md
+        if: steps.file-changes.outputs.files != ''
       - name: commit changes
         uses: EndBug/add-and-commit@v4
         with:
