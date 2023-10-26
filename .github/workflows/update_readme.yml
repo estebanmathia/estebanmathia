@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 1-5' # Tous les jours de la semaine (lundi à vendredi) à midi
+    - cron: '0 10 * * 1-5' # Tous les jours de la semaine (lundi à vendredi) à midi
     - cron: '0 1 4 3 *'   # 4 mars à midi
     - cron: '0 1 31 10 *' # 31 octobre à midi
     - cron: '0 1 25 12 *' # 25 décembre à midi
