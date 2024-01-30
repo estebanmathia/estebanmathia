@@ -941,3 +941,41 @@ README.md was changed
 .github/workflows/update_readme.yml was changed
 
 
+## 1.0.93
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+
+## 1.0.94
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+
+## 1.0.95
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+
+## 1.0.96
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+README.md was changed
