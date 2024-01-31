@@ -988,3 +988,11 @@ README.md was changed## 1.0.97
 CHANGELOG.md was changed
 
 
+## 1.0.98
+### Files added: 0
+
+### Files changed: 1
+
+CHANGELOG.md was changed
+
+
