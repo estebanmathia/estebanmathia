@@ -74,6 +74,14 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: "${{ steps.versionning.outputs.version }}"
+
+      - uses: dev-drprasad/delete-older-releases@v0.3.3
+        with:
+          keep_latest: 3
+          keep_min_download_counts: 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Notification on Discord
         uses: rjstone/discord-webhook-notify@v1
         with:
