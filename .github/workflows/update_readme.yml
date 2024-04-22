@@ -81,7 +81,7 @@ jobs:
           keep_min_download_counts: 1
           delete_expired_data: 10
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Notification on Discord
         uses: rjstone/discord-webhook-notify@v1
