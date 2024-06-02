@@ -65,23 +65,8 @@
 ## Codingame
 
 <a href="https://www.codingame.com/profile/5188bb237cbb02e049ab6edb8fc18d8b1763755">
-<div style="display: flex; justify-content: space-around;">
-  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
-    <h2>PROGRESSION</h2>
-    <div style="font-size: 48px; margin: 20px 0;">🥇</div>
-    <h3 style="color: orange;">Level 32</h3>
-    <p>it's cool to code</p>
-  </div>
-
-  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
-    <h2>RANKING</h2>
-    <div style="font-size: 48px; margin: 20px 0;">🏆</div>
-    <h3 style="color: orange;">172nd<br><span style="font-size: 16px;">(top 0.0002%)</span></h3>
-    <p>Grand Master</p>
-    <div style="height: 10px; background: #eee; border-radius: 5px; overflow: hidden;">
-      <div style="width: 82%; height: 100%; background: orange;"></div>
-    </div>
-  </div>
+<div style="display: flex; justify-content: space-around; font-family: Courier;">
+  <img src="./images/cg.png" alt="Codingame Stat" align="center"/>
 </div>
 </a>
 

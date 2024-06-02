@@ -19,5 +19,8 @@
   "homepage": "https://github.com/estebanmathia/MyREADME#readme",
   "devDependencies": {
     "eslint": "^7.30.0"
+  },
+  "dependencies": {
+    "puppeteer": "^22.10.0"
   }
 }

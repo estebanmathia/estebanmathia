@@ -1,23 +1,24 @@
 const { promises: fs } = require('fs');
 const readme = require('./readme');
+const puppeteer = require('puppeteer');
+const path = require('path');
 
 const msInOneDay = 1000 * 60 * 60 * 24;
 
 const today = new Date();
+let dataCG = null;
 
-async function generateNewREADME() {
-  const readmeRow = readme.split('\n');
+function generateNewHTML(content) {
+  const contentRow = content.split('\n');
 
   function updateIdentifier(identifier, replaceText) {
-    const identifierIndex = findIdentifierIndex(readmeRow, identifier);
-    if (!readmeRow[identifierIndex]) return;
-    readmeRow[identifierIndex] = readmeRow[identifierIndex].replace(
+    const identifierIndex = findIdentifierIndex(contentRow, identifier);
+    if (!contentRow[identifierIndex]) return;
+    contentRow[identifierIndex] = contentRow[identifierIndex].replace(
       `<#${identifier}>`,
       replaceText
     );
   };
-
-  let dataCG = await getDataCodingame();
 
   const identifierToUpdate = {
     // Add custom rows here
@@ -40,7 +41,7 @@ async function generateNewREADME() {
     updateIdentifier(key, value);
   });
 
-  return readmeRow.join('\n');
+  return contentRow.join('\n');
 }
 
 const moodByDay = {
@@ -208,6 +209,49 @@ function roundFirstDecimalNonZero(number) {
   return Math.round(number * factor) / factor;
 }
 
+async function htmlToImage(htmlString, outputPath) {
+
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.setContent(htmlString, { waitUntil: 'networkidle0' });
+
+  const element = await page.$('body > div');
+  const boundingBox = await element.boundingBox();
+
+  await page.setViewport({
+      width: Math.ceil(boundingBox.width),
+      height: Math.ceil(boundingBox.height),
+      deviceScaleFactor: 1,
+  });
+
+  await element.screenshot({ path: outputPath });
+  await browser.close();
+}
+
+let htmlCodingame = `
+<div style="display: flex; justify-content: space-around; font-family: Courier;">
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>PROGRESSION</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🥇</div>
+    <h3 style="color: <#topColor>;">Level <#level></h3>
+    <p><#tagline></p>
+  </div>
+
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>RANKING</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🏆</div>
+    <h3 style="color: <#topColor2>;"><#topNumber><br><span style="font-size: 16px;">(top <#topPercentage>%)</span></h3>
+    <p><#CGTitle></p>
+    <div style="height: 10px; background: #eee; border-radius: 5px; overflow: hidden;">
+      <div style="width: <#topSlider>%; height: 100%; background: <#topColor3>;"></div>
+    </div>
+  </div>
+</div>
+`;
+
+const outputPath = path.join(__dirname, 'images/cg.png');
+
 
 const findIdentifierIndex = (rows, identifier) =>
   rows.findIndex((r) => Boolean(r.match(new RegExp(`<#${identifier}>`, 'i'))));
@@ -215,7 +259,9 @@ const findIdentifierIndex = (rows, identifier) =>
 const updateREADMEFile = (text) => fs.writeFile('./README.md', text);
 
 async function main() {
-  const newREADME = await generateNewREADME();
+  dataCG = await getDataCodingame();
+  await htmlToImage(generateNewHTML(htmlCodingame), outputPath);
+  const newREADME = generateNewHTML(readme);
   console.log(newREADME);
   updateREADMEFile(newREADME);
 }
