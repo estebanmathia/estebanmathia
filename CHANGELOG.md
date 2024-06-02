@@ -1904,3 +1904,11 @@ index.js was changed
 readme.js was changed
 
 
+## 1.1.0
+### Files added: 0
+
+### Files changed: 1
+
+.github/workflows/update_readme.yml was changed
+
+
