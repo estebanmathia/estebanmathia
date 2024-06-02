@@ -31,6 +31,9 @@
       <a href="#streak">Streak</a>
     </li>
     <li>
+      <a href="#codingame">Codingame</a>
+    </li>
+    <li>
       <a href="#organizations">Organizations</a>
     </li>
     <li>
@@ -56,6 +59,31 @@
 ## Streak
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=estebanmathia&theme=gruvbox&hide_border=true" alt="Streak"  align="center"/>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Codingame
+
+<a href="https://www.codingame.com/profile/5188bb237cbb02e049ab6edb8fc18d8b1763755">
+<div style="display: flex; justify-content: space-around;">
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>PROGRESSION</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🥇</div>
+    <h3 style="color: orange;">Level 32</h3>
+    <p>it's cool to code</p>
+  </div>
+
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>RANKING</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🏆</div>
+    <h3 style="color: orange;">172nd<br><span style="font-size: 16px;">(top 0.0002%)</span></h3>
+    <p>Grand Master</p>
+    <div style="height: 10px; background: #eee; border-radius: 5px; overflow: hidden;">
+      <div style="width: 82%; height: 100%; background: orange;"></div>
+    </div>
+  </div>
+</div>
+</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -139,9 +167,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri May 31 2024
+Last update on Sun Jun 02 2024
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Kicking off the week with some code. 🚀
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 

@@ -31,6 +31,9 @@ module.exports = `<div id="top"></div>
       <a href="#streak">Streak</a>
     </li>
     <li>
+      <a href="#codingame">Codingame</a>
+    </li>
+    <li>
       <a href="#organizations">Organizations</a>
     </li>
     <li>
@@ -56,6 +59,31 @@ module.exports = `<div id="top"></div>
 ## Streak
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=estebanmathia&theme=gruvbox&hide_border=true" alt="Streak"  align="center"/>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Codingame
+
+<a href="https://www.codingame.com/profile/5188bb237cbb02e049ab6edb8fc18d8b1763755">
+<div style="display: flex; justify-content: space-around;">
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>PROGRESSION</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🥇</div>
+    <h3 style="color: <#topColor>;">Level <#level></h3>
+    <p><#tagline></p>
+  </div>
+
+  <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; text-align: center; width: 45%;">
+    <h2>RANKING</h2>
+    <div style="font-size: 48px; margin: 20px 0;">🏆</div>
+    <h3 style="color: <#topColor2>;"><#topNumber><br><span style="font-size: 16px;">(top <#topPercentage>%)</span></h3>
+    <p><#CGTitle></p>
+    <div style="height: 10px; background: #eee; border-radius: 5px; overflow: hidden;">
+      <div style="width: <#topSlider>%; height: 100%; background: <#topColor3>;"></div>
+    </div>
+  </div>
+</div>
+</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

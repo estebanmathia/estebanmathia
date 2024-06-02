@@ -5,7 +5,7 @@ const msInOneDay = 1000 * 60 * 60 * 24;
 
 const today = new Date();
 
-function generateNewREADME() {
+async function generateNewREADME() {
   const readmeRow = readme.split('\n');
 
   function updateIdentifier(identifier, replaceText) {
@@ -15,14 +15,25 @@ function generateNewREADME() {
       `<#${identifier}>`,
       replaceText
     );
-  }
+  };
+
+  let dataCG = await getDataCodingame();
 
   const identifierToUpdate = {
-    // Add your own custom rows here
+    // Add custom rows here
     // Format: identifier: func
     today_date: getTodayDate(),
     signing: getSigning(),
     special_day: getSpecialDay(),
+    topColor: dataCG.topColor,
+    topColor2: dataCG.topColor,
+    topColor3: dataCG.topColor,
+    level: dataCG.codingamer.level,
+    topNumber: dataCG.rank,
+    topPercentage: dataCG.topPercentage,
+    topSlider: dataCG.topSlider,
+    tagline: dataCG.codingamer.tagline??'',
+    CGTitle: dataCG.CGTitle,
   };
 
   Object.entries(identifierToUpdate).forEach(([key, value]) => {
@@ -33,6 +44,7 @@ function generateNewREADME() {
 }
 
 const moodByDay = {
+  0: "Kicking off the week with some code. 🚀",
   1: "Turning caffeine into code since 2019. ☕💻",
   2: "Commander of keystrokes, architect of solutions. ⌨️🏗️",
   3: "Debugging the matrix... one bug at a time. 🐛",
@@ -48,16 +60,6 @@ function getSigning() {
 
 function getTodayDate() {
   return today.toDateString();
-}
-
-function getDBNWSentence() {
-  const nextYear = today.getFullYear() + 1;
-  const nextYearDate = new Date(String(nextYear));
-
-  const timeUntilNewYear = nextYearDate.getTime() - today.getTime();
-  const dayUntilNewYear = Math.round(timeUntilNewYear / msInOneDay);
-
-  return `**${dayUntilNewYear} day before ${nextYear} ⏱**`;
 }
 
 const allSpecialDays = [
@@ -112,15 +114,110 @@ function getSpecialDay() {
   return specialDay ? "\n"+specialDay.text+"\n" : '';
 }
 
+async function getDataCodingame() {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  const raw = JSON.stringify([
+    "5188bb237cbb02e049ab6edb8fc18d8b1763755"
+  ]);
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+
+  let data = await fetch("https://www.codingame.com/services/CodinGamer/findCodingamePointsStatsByHandle", requestOptions)
+    .then((response) => response.json())
+    .catch((error) => console.error(error));
+  if (!data) return;
+  const infoCG = getInfoCGStage(data.codingamer.rank);
+  data.topColor = infoCG["color"];
+  data.topPercentage = roundFirstDecimalNonZero(data.codingamer.rank/data.codingamePointsRankingDto.numberCodingamersGlobal);
+  let stage = infoCG["stage"];
+  data.topSlider = Math.round(100-(data.codingamer.rank-stage[0])/(stage[1]-stage[0])*100);
+  data.rank = ordinal_suffix_of(data.codingamer.rank);
+  data.CGTitle = infoCG["title"];
+  return data;
+}
+
+const getInfoCGStage = (rank) => {
+  if (rank > 5000){
+    return {
+      title: "Disciple",
+      color: "green",
+      stage: [5000, 10000]
+    }
+  }else if (rank > 2500){
+    return {
+      title: "Mentor",
+      color: "brown",
+      stage: [2500, 5000]
+    }
+  } else if (rank > 500){
+    return {
+      title: "Master",
+      color: "grey",
+      stage: [500, 2500]
+    }
+  } else if (rank > 100){
+    return {
+      title: "Grand Master",
+      color: "orange",
+      stage: [100, 500]
+    }
+  } else if (rank < 100){
+    return {
+      title: "Gourou",
+      color: "red",
+      stage: [0, 100]
+    }
+  }
+}
+
+function ordinal_suffix_of(i) {
+  let j = i % 10,
+      k = i % 100;
+  if (j === 1 && k !== 11) {
+      return i + "st";
+  }
+  if (j === 2 && k !== 12) {
+      return i + "nd";
+  }
+  if (j === 3 && k !== 13) {
+      return i + "rd";
+  }
+  return i + "th";
+}
+
+function roundFirstDecimalNonZero(number) {
+  let numberStr = number.toString();
+
+  let positionComma = numberStr.indexOf('.');
+  if (positionComma === -1) {
+      return number;
+  }
+  let i = positionComma + 1;
+  while (i < numberStr.length && numberStr[i] === '0') {
+      i++;
+  }
+  let numberDecimals = i - positionComma;
+
+  let factor = Math.pow(10, numberDecimals);
+  return Math.round(number * factor) / factor;
+}
+
 
 const findIdentifierIndex = (rows, identifier) =>
   rows.findIndex((r) => Boolean(r.match(new RegExp(`<#${identifier}>`, 'i'))));
 
 const updateREADMEFile = (text) => fs.writeFile('./README.md', text);
 
-function main() {
-  const newREADME = generateNewREADME();
+async function main() {
+  const newREADME = await generateNewREADME();
   console.log(newREADME);
   updateREADMEFile(newREADME);
 }
+
 main();
