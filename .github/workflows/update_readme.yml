@@ -23,6 +23,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0   
+
       - name: Git Version
         id: versionning
         uses: codacy/git-version@2.8.0
@@ -32,18 +33,25 @@ jobs:
           log-paths: ./
           minor-identifier: 'feat:'
           major-identifier: 'break:'
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Update README.md file
         run: |
           node index.js > README.md
         env:
           CI: true
+
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v41
+
       - name: List all changed files
         run: |
           echo "## ${{ steps.versionning.outputs.version }}" >> CHANGELOG.md
@@ -60,6 +68,7 @@ jobs:
             echo "" >> CHANGELOG.md
           done
           echo "" >> CHANGELOG.md
+
       - name: commit changes
         uses: EndBug/add-and-commit@v4
         with:
@@ -70,6 +79,7 @@ jobs:
           message: ':memo: README.md updated automaticaly'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - name: Release
         uses: ncipollo/release-action@v1
         with:
