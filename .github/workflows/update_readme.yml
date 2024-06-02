@@ -16,7 +16,7 @@ jobs:
       contents: write
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
