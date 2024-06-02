@@ -1912,3 +1912,13 @@ readme.js was changed
 .github/workflows/update_readme.yml was changed
 
 
+## 1.1.1
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+images/cg.png was changed
+
+
