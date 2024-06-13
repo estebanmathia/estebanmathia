@@ -152,9 +152,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Wed Jun 12 2024
+Last update on Thu Jun 13 2024
 
-Debugging the matrix... one bug at a time. 🐛
+Dancing with algorithms in the rhythm of innovation. 💃🕺📈
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
