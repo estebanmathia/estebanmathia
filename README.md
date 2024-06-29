@@ -82,6 +82,7 @@ Here are some of the organizations I'm proud to be a part of:
 ## Open Source Contributions
 I enjoy giving back to the community and have contributed to the following open-source projects:
 - [Kexa](https://github.com/4urcloud/Kexa)
+- [Kexa Github Action](https://github.com/4urcloud/Kexa_githubAction)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -152,9 +153,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Jun 28 2024
+Last update on Sat Jun 29 2024
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Code poet with a dash of caffeine. 📜☕
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
