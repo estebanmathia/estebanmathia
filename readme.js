@@ -82,6 +82,7 @@ Here are some of the organizations I'm proud to be a part of:
 ## Open Source Contributions
 I enjoy giving back to the community and have contributed to the following open-source projects:
 - [Kexa](https://github.com/4urcloud/Kexa)
+- [Kexa Github Action](https://github.com/4urcloud/Kexa_githubAction)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
