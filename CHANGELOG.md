@@ -2268,3 +2268,17 @@ README.md was changed
 CHANGELOG.md was changed
 
 
+## 1.1.34
+### Files added: 0
+
+### Files changed: 4
+
+CHANGELOG.md was changed
+
+package-lock.json was changed
+
+package.json was changed
+
+yarn.lock was changed
+
+
