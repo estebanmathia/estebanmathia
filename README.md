@@ -153,9 +153,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Jul 12 2024
+Last update on Sun Jul 14 2024
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Kicking off the week with some code. 🚀
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
