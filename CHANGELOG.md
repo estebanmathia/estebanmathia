@@ -2282,3 +2282,11 @@ package.json was changed
 yarn.lock was changed
 
 
+## 1.1.35
+### Files added: 0
+
+### Files changed: 1
+
+CHANGELOG.md was changed
+
+
