@@ -168,7 +168,7 @@ const getInfoCGStage = (rank) => {
       color: "orange",
       stage: [100, 500]
     }
-  } else if (rank < 100){
+  } else if (rank <= 100){
     return {
       title: "Gourou",
       color: "red",
