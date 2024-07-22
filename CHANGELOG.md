@@ -2350,3 +2350,11 @@ images/cg.png was changed
 CHANGELOG.md was changed
 
 
+## 1.1.42
+### Files added: 0
+
+### Files changed: 1
+
+CHANGELOG.md was changed
+
+
