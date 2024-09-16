@@ -76,13 +76,14 @@ module.exports = `<div id="top"></div>
 Here are some of the organizations I'm proud to be a part of:
 - [4urCloud](https://github.com/4urcloud)
 - [TheCloudPrices](https://github.com/thecloudprices)
+- [Kexa-io](https://github.com/kexa-io)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Open Source Contributions
 I enjoy giving back to the community and have contributed to the following open-source projects:
-- [Kexa](https://github.com/4urcloud/Kexa)
-- [Kexa Github Action](https://github.com/4urcloud/Kexa_githubAction)
+- [Kexa](https://github.com/kexa-io/Kexa)
+- [Kexa Github Action](https://github.com/kexa-io/git-action)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
