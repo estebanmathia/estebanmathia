@@ -2788,3 +2788,15 @@ README.md was changed
 readme.js was changed
 
 
+## 1.1.84
+### Files added: 0
+
+### Files changed: 3
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+images/cg.png was changed
+
+
