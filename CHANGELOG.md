@@ -2800,3 +2800,11 @@ README.md was changed
 images/cg.png was changed
 
 
+## 1.1.85
+### Files added: 0
+
+### Files changed: 1
+
+CHANGELOG.md was changed
+
+
