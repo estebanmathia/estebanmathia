@@ -154,9 +154,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Dec 06 2024
+Last update on Mon Dec 09 2024
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Turning caffeine into code since 2019. ☕💻
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
