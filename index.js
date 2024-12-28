@@ -211,7 +211,9 @@ function roundFirstDecimalNonZero(number) {
 
 async function htmlToImage(htmlString, outputPath) {
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: '/usr/bin/chromium-browser'
+  });
   const page = await browser.newPage();
 
   await page.setContent(htmlString, { waitUntil: 'networkidle0' });
