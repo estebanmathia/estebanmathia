@@ -3492,3 +3492,15 @@ README.md was changed
 index.js was changed
 
 
+## 1.1.154
+### Files added: 0
+
+### Files changed: 3
+
+CHANGELOG.md was changed
+
+images/cg.png was changed
+
+yarn.lock was changed
+
+
