@@ -154,9 +154,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Sun Jan 12 2025
+Last update on Mon Jan 13 2025
 
-Kicking off the week with some code. 🚀
+Turning caffeine into code since 2019. ☕💻
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
