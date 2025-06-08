@@ -4768,3 +4768,17 @@ yarn.lock was changed
 .github/workflows/update_readme.yml was changed
 
 
+## 1.2.1
+### Files added: 0
+
+### Files changed: 4
+
+CHANGELOG.md was changed
+
+package-lock.json was changed
+
+package.json was changed
+
+yarn.lock was changed
+
+
