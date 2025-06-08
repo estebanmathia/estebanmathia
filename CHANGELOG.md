@@ -4750,3 +4750,15 @@ README.md was changed
 index.js was changed
 
 
+## 1.2.1-dependabotnpmandyarnmulti7b767.1.sha.96b3fd1
+### Files added: 0
+
+### Files changed: 3
+
+package-lock.json was changed
+
+package.json was changed
+
+yarn.lock was changed
+
+
