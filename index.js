@@ -3,10 +3,6 @@ const readme = require('./readme');
 const puppeteer = require('puppeteer');
 const path = require('path');
 
-// API Key for Abstract Public Holidays API.
-// For production, consider using environment variables: e.g., process.env.ABSTRACT_HOLIDAYS_API_KEY
-const ABSTRACT_HOLIDAYS_API_KEY = '7d2663d8dc4847c9bbe1c06303bc6973';
-
 // const msInOneDay = 1000 * 60 * 60 * 24; // Unused constant
 const today = new Date();
 let dataCG = null; // Holds the processed Codingame data once fetched.
@@ -159,7 +155,7 @@ async function getSpecialDay() {
 
   // Fetch holidays from API
   // Using 'US' as a default country code for now. This could be made configurable.
-  const fetchedHolidays = await fetchDailyEvents(ABSTRACT_HOLIDAYS_API_KEY, 'US');
+  const fetchedHolidays = await fetchDailyEvents('FR');
   if (fetchedHolidays && fetchedHolidays.length > 0) {
     for (const holidayName of fetchedHolidays) {
       messages += `\n🎉 Happy ${holidayName}! 🎉`; // Append formatted API holiday
@@ -192,13 +188,13 @@ async function getSpecialDay() {
  * @param {string} countryCode The country code (e.g., 'US', 'GB').
  * @returns {Promise<string[]>} A promise that resolves to an array of holiday names, or an empty array if an error occurs or no holidays are found.
  */
-async function fetchDailyEvents(apiKey, countryCode) {
+async function fetchDailyEvents(countryCode) {
   const now = new Date();
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, pad to MM
   const day = String(now.getDate()).padStart(2, '0'); // Pad to DD
 
-  const apiUrl = `https://holidays.abstractapi.com/v1/?api_key=${apiKey}&country=${countryCode}&year=${year}&month=${month}&day=${day}`;
+  const apiUrl = `https://holidays.abstractapi.com/v1/?api_key=7d2663d8dc4847c9bbe1c06303bc6973&country=${countryCode}&year=${year}&month=${month}&day=${day}`;
 
   try {
     const response = await fetch(apiUrl);
