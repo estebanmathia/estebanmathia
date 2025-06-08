@@ -4,8 +4,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/estebanmathia/MyREADME">
-    <img src="./images/pp.png" alt="Profile Picture" width="160" height="160">
+  <a href="https:README.md successfully updated.
+Main: Script completed successfully.
+alt="Profile Picture" width="160" height="160">
   </a>
 
 <h3 align="center">Esteban MATHIA</h3>
@@ -154,9 +155,10 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Jun 06 2025
+Last update on Sun Jun 08 2025
 
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+🎉 Happy Whit Sunday! 🎉
+Kicking off the week with some code. 🚀
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
