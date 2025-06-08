@@ -4726,3 +4726,11 @@ CHANGELOG.md was changed
 README.md was changed
 
 
+## 1.2.0-refactorreadmegeneration.4.sha.6e7d90b
+### Files added: 0
+
+### Files changed: 1
+
+index.js was changed
+
+
