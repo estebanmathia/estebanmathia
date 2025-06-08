@@ -4734,3 +4734,19 @@ README.md was changed
 index.js was changed
 
 
+## 1.2.0
+### Files added: 1
+
+codingame_template.html was added
+
+### Files changed: 4
+
+codingame_template.html was changed
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+index.js was changed
+
+
