@@ -3,6 +3,10 @@ const readme = require('./readme');
 const puppeteer = require('puppeteer');
 const path = require('path');
 
+// API Key for Abstract Public Holidays API.
+// For production, consider using environment variables: e.g., process.env.ABSTRACT_HOLIDAYS_API_KEY
+const ABSTRACT_HOLIDAYS_API_KEY = '7d2663d8dc4847c9bbe1c06303bc6973';
+
 // const msInOneDay = 1000 * 60 * 60 * 24; // Unused constant
 const today = new Date();
 let dataCG = null; // Holds the processed Codingame data once fetched.
@@ -14,9 +18,9 @@ let dataCG = null; // Holds the processed Codingame data once fetched.
  *
  * @param {string} templateString The HTML template string.
  * @param {object} data Object containing data to populate the template. Keys in this object will replace `<#key>` placeholders.
- * @returns {string} The populated HTML string.
+ * @returns {Promise<string>} A promise that resolves to the populated HTML string.
  */
-function populateHtmlTemplate(templateString, data) {
+async function populateHtmlTemplate(templateString, data) { // Made async
   let content = templateString;
 
   // Combine general placeholders with specific data from the 'data' object.
@@ -24,7 +28,7 @@ function populateHtmlTemplate(templateString, data) {
   const identifiers = {
     today_date: getTodayDate(),
     signing: getSigning(),
-    special_day: getSpecialDay(),
+    special_day: await getSpecialDay(), // Await the async getSpecialDay
     ...data, // Spread operator to include all properties from the data object.
   };
 
@@ -144,14 +148,87 @@ const allSpecialDays = [
   },
 ]
 
-function getSpecialDay() {
-  const specialDay = allSpecialDays.find((specialDay) => {
+/**
+ * Asynchronously fetches daily holidays from an API and checks for manually defined special days.
+ * It combines messages for all found holidays and special days.
+ * @returns {Promise<string>} A promise that resolves to a string containing formatted messages for any holidays or special days,
+ * or an empty string if none are found.
+ */
+async function getSpecialDay() {
+  let messages = '';
+
+  // Fetch holidays from API
+  // Using 'US' as a default country code for now. This could be made configurable.
+  const fetchedHolidays = await fetchDailyEvents(ABSTRACT_HOLIDAYS_API_KEY, 'US');
+  if (fetchedHolidays && fetchedHolidays.length > 0) {
+    for (const holidayName of fetchedHolidays) {
+      messages += `\n🎉 Happy ${holidayName}! 🎉`; // Append formatted API holiday
+    }
+  }
+
+  // Check for manually defined special days
+  const manualSpecialDay = allSpecialDays.find((specialDay) => {
     return specialDay.date.getDate() === today.getDate() &&
       specialDay.date.getMonth() === today.getMonth();
   });
 
-  // If a special day is found, format its text with newlines, otherwise return empty string.
-  return specialDay ? `\n${specialDay.text}\n` : '';
+  if (manualSpecialDay) {
+    // The manualSpecialDay.text is already formatted with leading/trailing newlines (e.g., "\n🎂 Happy birthday! 🎂\n")
+    // The API holidays are formatted as "\n🎉 Happy Holiday! 🎉"
+    // If 'messages' already contains API holidays, it will look like:
+    // "\n🎉 Happy Holiday1! 🎉\n🎉 Happy Holiday2! 🎉"
+    // Appending manualSpecialDay.text:
+    // "\n🎉 Happy Holiday1! 🎉\n🎉 Happy Holiday2! 🎉\n🎂 Happy birthday! 🎂\n"
+    // This formatting seems acceptable.
+    messages += `${manualSpecialDay.text}`;
+  }
+
+  return messages;
+}
+
+/**
+ * Fetches daily holiday events from the Abstract Public Holidays API for a given country and date.
+ * @param {string} apiKey The API key for Abstract Public Holidays API.
+ * @param {string} countryCode The country code (e.g., 'US', 'GB').
+ * @returns {Promise<string[]>} A promise that resolves to an array of holiday names, or an empty array if an error occurs or no holidays are found.
+ */
+async function fetchDailyEvents(apiKey, countryCode) {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, pad to MM
+  const day = String(now.getDate()).padStart(2, '0'); // Pad to DD
+
+  const apiUrl = `https://holidays.abstractapi.com/v1/?api_key=${apiKey}&country=${countryCode}&year=${year}&month=${month}&day=${day}`;
+
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      console.error(`Error fetching daily events: API request failed with status ${response.status} - ${response.statusText}`);
+      return [];
+    }
+
+    const data = await response.json();
+
+    // The API returns an empty array if there are no holidays, which is a valid success response.
+    if (Array.isArray(data) && data.length === 0) {
+      return []; // No holidays today
+    }
+
+    // If data is an array and has items, map to holiday names.
+    // Assuming the API returns an array of objects, each with a 'name' property.
+    if (Array.isArray(data)) {
+      return data.map(holiday => holiday.name).filter(name => name); // Filter out any potentially undefined names
+    }
+
+    // If the response is not an array (unexpected format), log it and return empty.
+    console.error("Error fetching daily events: Unexpected API response format.", data);
+    return [];
+
+  } catch (error) {
+    console.error("Error during fetchDailyEvents:", error);
+    return [];
+  }
 }
 
 /**
@@ -416,7 +493,7 @@ async function main() {
   // The `readme` variable (imported from readme.js) is the template string for README.md.
   // dataCG contains Codingame stats, which will fill in placeholders like <#level>, <#rank>, etc.
   // General placeholders like <#today_date>, <#signing>, <#special_day> are also filled.
-  const newREADME = populateHtmlTemplate(readme, dataCG);
+  const newREADME = await populateHtmlTemplate(readme, dataCG); // Added await
   // console.log(newREADME); // Logging the whole README is usually too verbose.
 
   // Step 6: Update the README.md file

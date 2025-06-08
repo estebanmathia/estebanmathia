@@ -4726,15 +4726,3 @@ CHANGELOG.md was changed
 README.md was changed
 
 
-## 1.1.273-refactorreadmegeneration.1.sha.ca3464f
-### Files added: 1
-
-codingame_template.html was added
-
-### Files changed: 2
-
-codingame_template.html was changed
-
-index.js was changed
-
-
