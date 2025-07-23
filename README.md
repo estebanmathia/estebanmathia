@@ -155,9 +155,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Mon Jul 21 2025
+Last update on Wed Jul 23 2025
 
-Turning caffeine into code since 2019. ☕💻
+Debugging the matrix... one bug at a time. 🐛
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
