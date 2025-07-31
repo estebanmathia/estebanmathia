@@ -5152,3 +5152,13 @@ README.md was changed
 images/cg.png was changed
 
 
+## 1.2.35
+### Files added: 0
+
+### Files changed: 2
+
+CHANGELOG.md was changed
+
+README.md was changed
+
+
