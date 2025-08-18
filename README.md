@@ -155,10 +155,9 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Aug 15 2025
+Last update on Mon Aug 18 2025
 
-🎉 Happy Assumption of Mary! 🎉
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+Turning caffeine into code since 2019. ☕💻
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
