@@ -101,7 +101,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Notification on Discord
-        #if: failure()
+        if: failure()
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
