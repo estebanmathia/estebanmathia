@@ -101,13 +101,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Notification on Discord
+        #if: failure()
         uses: rjstone/discord-webhook-notify@v1
         with:
-          severity: info
+          severity: error
           username: MyReadmeBot
-          color: '#FFFF00'
+          color: '#FF0000'
           avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
-          description: New update du jour
-          details: ''
-          footer: New commit
+          description: "Échec lors de la mise à jour du README."
+          details: 'https://github.com/estebanmathia/estebanmathia/actions'
+          footer: "Workflow failed"
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
