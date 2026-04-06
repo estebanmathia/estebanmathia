@@ -155,10 +155,10 @@ Esteban MATHIA - [esteban.mathia@supinfo.com](mailto:esteban.mathia@supinfo.com)
 
 Added the `Fri 15 Sep 2023`
 
-Last update on Fri Apr 03 2026
+Last update on Mon Apr 06 2026
 
-🎉 Happy Good Friday! 🎉
-Exploring the binary jungle and making it user-friendly. 🌐🌿
+🎉 Happy Easter Monday! 🎉
+Turning caffeine into code since 2019. ☕💻
 
 <img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" />
 
