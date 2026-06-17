@@ -10,7 +10,7 @@ module.exports = `<div id="top"></div>
 
 <h3 align="center">Esteban MATHIA</h3>
   <p align="center">
-    I'm Esteban Mathia, a passionate software developer currently working at Innovtech. I'm an active member of several organizations and actively contribute
+    I'm Esteban Mathia, a passionate lead software developer currently working at Manorga. I'm an active member of several organizations and actively contribute
     <br />
     <a href="https://github.com/estebanmathia/MyREADME"><strong>Explore »</strong></a>
     <br />
