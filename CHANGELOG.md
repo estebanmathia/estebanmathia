@@ -8088,3 +8088,13 @@ CHANGELOG.md was changed
 README.md was changed
 
 
+## 1.2.324
+### Files added: 1
+
+.github/workflows/delete_old_release.yml was added
+
+### Files changed: 1
+
+.github/workflows/delete_old_release.yml was changed
+
+
