@@ -11,12 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Delete releases and tags older than 14 days
-        uses: dev-drprasad/delete-older-backups@v0.3.0
+      - uses: Nats-ji/delete-old-releases@v1
         with:
-          repo: ${{ github.repository }}
-          keep_latest: 0
-          auto_date: true
-          older_than: 14 days
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          keep-count: 5
+          keep-old-minor-releases: true
+          keep-old-minor-releases-count: 5
