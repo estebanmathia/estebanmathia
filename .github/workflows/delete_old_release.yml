@@ -1,0 +1,22 @@
+name: Cleanup Old Releases and Tags
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete releases and tags older than 14 days
+        uses: dev-drprasad/delete-older-backups@v0.3.0
+        with:
+          repo: ${{ github.repository }}
+          keep_latest: 0
+          auto_date: true
+          older_than: 14 days
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
